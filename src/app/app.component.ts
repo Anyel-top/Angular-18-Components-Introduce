@@ -15,7 +15,7 @@ export class AppComponent {
   title = 'components';
 
   counterProgress: number = 0;
-  totalCountdown: number = 15;
+  totalCountdown: number = 5;
 
   updateProgress($event:number){
     this.counterProgress = (this.totalCountdown - $event)/this.totalCountdown *100;
