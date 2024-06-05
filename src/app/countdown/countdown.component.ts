@@ -19,20 +19,30 @@ export class CountdownComponent implements OnInit {
   @Input() init:number = 0;
   public counter:number = 0;
 
+  private countDownTimeRef:any = null;
+
   
 
   startCounter(){
     if (this.init && this.init>0){
+      this.clearTimeOutRef()
       this.counter = this.init;
       this.doCountdown();
     }
   }
 
   doCountdown(){
-    setTimeout(()=>{
+    this.countDownTimeRef = setTimeout(()=>{
       this.counter = this.counter - 1;
       this.processCountdown();
     }, 1000)
+  }
+
+  private clearTimeOutRef(){
+    if (this.countDownTimeRef){
+      clearTimeout(this.countDownTimeRef);
+      this.countDownTimeRef = null;
+    }
   }
 
   processCountdown(){

@@ -4,6 +4,10 @@
     
     [init] = "totalCountdown" (onDecrease) = "updateProgress($event)" (onComplete) = "countdownFinished()"
     ></app-countdown>
+    <div>
+        <label for="totalCountdown">Inicia en:</label>
+        <input type="number" id="totalCountdown"/>
+    </div>
 
     <button (click)="countdown.startCounter();counterProgress=0">Reiniciar</button>
 </h1>
