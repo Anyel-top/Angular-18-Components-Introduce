@@ -1,4 +1,5 @@
-import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter, OnChanges, SimpleChanges } from '@angular/core';
+import { start } from 'repl';
 
 @Component({
   selector: 'app-countdown',
@@ -7,7 +8,12 @@ import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
   templateUrl: './countdown.component.html',
   styleUrl: './countdown.component.scss'
 })
-export class CountdownComponent implements OnInit {
+export class CountdownComponent implements OnInit, OnChanges {
+  
+  ngOnChanges(changes: SimpleChanges): void {
+    console.log('Valor de init cambio a: ', changes['init'].currentValue);
+    this.startCounter();
+  }
 
   ngOnInit(): void {
     this.startCounter();

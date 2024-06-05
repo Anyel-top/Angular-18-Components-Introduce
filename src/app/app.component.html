@@ -6,7 +6,7 @@
     ></app-countdown>
     <div>
         <label for="totalCountdown">Inicia en:</label>
-        <input type="number" id="totalCountdown"/>
+        <input type="number" id="totalCountdown" [(ngModel)]="totalCountdown" />
     </div>
 
     <button (click)="countdown.startCounter();counterProgress=0">Reiniciar</button>

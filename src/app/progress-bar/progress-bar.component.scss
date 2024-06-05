@@ -1,13 +1,18 @@
-:host{
+:host {
     display: block;
     height: 20px;
-    width: 300x;
+    width: 300px;
     margin: 8px;
-    border: 1px solid black;
-    background-color: white;
-    div{
-        background-color: red;
-        height: 100%;
-        width: 30%;
+    border-radius: 10px; /* Esquinas redondeadas */
+    overflow: hidden; /* Oculta cualquier desbordamiento del progreso */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra sutil para dar profundidad */
+    background-color: rgba(255, 255, 255, 0.6); /* Color de fondo semi-transparente */
+    
+    div {
+      height: 100%;
+      width: 0%; /* Comienza en cero para mostrar el progreso */
+      background: linear-gradient(to right, #4CAF50, #8BC34A); /* Gradiente de colores */
+      transition: width 0.8s ease-in; /* Transición suave del progreso */
     }
-}
+  }
+  
